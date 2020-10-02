@@ -10,17 +10,17 @@ namespace CodeProjects
 	{
 		int[][] meanGroups(int[][] a)
 		{
-			List<long> means = new List<long>();
+			List<double> means = new List<double>();
 			List<List<int>> b = new List<List<int>>();
 
 			for (int i = 0; i < a.Length; i++)
 			{
-				//calculate mean
-				int mean = 0;
+				double mean = 0;
 				for (int j = 0; j < a[i].Length; j++)
 				{
 					mean += a[i][j];
 				}
+
 				mean /= a[i].Length;
 
 				if (!means.Contains(mean))
@@ -31,7 +31,7 @@ namespace CodeProjects
 				else
 				{
 					int index = means.FindIndex(m => m == mean);
-					b.Find(l => l.Contains(index)).Add(i);
+					b[index].Add(i);
 				}
 			}
 
