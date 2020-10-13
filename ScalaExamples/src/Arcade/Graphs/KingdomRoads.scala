@@ -65,4 +65,26 @@ class KingdomRoads {
 		true
 	}
 	
+	def financialCrisis(roadRegister: Array[Array[Boolean]]): Array[Array[Array[Boolean]]] = {
+		val result = Array.ofDim[Boolean](roadRegister.length, roadRegister.length - 1, roadRegister.length - 1)
+		
+		for (i <- roadRegister.indices) {
+			result(i) = roadRegister.indices.filterNot(_ == i).map(k =>
+				roadRegister(k).indices.filterNot(_ == i).map(j =>
+					roadRegister(k)(j)).toArray).toArray
+		}
+		
+		result
+	}
+	
+	def namingRoads(roads: Array[Array[Int]]): Boolean = {
+		for (r <- roads) {
+			if (!roads.filter(e => e(0) == r(0) || e(1) == r(0)).forall(e => e(2) != r(2) + 1 && e(2) != r(2) - 1)) {
+				return false
+			}
+		}
+		
+		true
+	}
+	
 }
