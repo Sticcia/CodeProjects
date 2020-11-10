@@ -86,5 +86,18 @@ class KingdomRoads {
 		
 		true
 	}
+
+	def greatRenaming(roadRegister: Array[Array[Boolean]]): Array[Array[Boolean]] = {
+		val arr = roadRegister.map(e => e.last +: e.dropRight(1))
+		arr.last +: arr.dropRight(1)
+	}
+
+	def citiesConquering(n: Int, roads: Array[Array[Int]]): Array[Int] = {
+		val result = Array.ofDim[Int](n)
+
+		// TODO
+
+		result
+	}
 	
 }
