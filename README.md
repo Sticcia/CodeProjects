@@ -1,2 +1,2 @@
 # CodeProjects
-Small code projects for intervies and practice
+Small code projects for interviews and practice

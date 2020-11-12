@@ -52,6 +52,11 @@ namespace CodeProjects.Arcade
 			}
 
 			return max;
+
+			/*
+			 * int sum = inputArray.Take(k).Sum();
+			 * return Enumerable.Range(k, inputArray.Length - k).Max(r => Math.Max(sum, sum = (sum + inputArray[r] - inputArray[r - k])));
+			 */
 		}
 	}
 }
